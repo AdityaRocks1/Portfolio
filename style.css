@@ -194,13 +194,24 @@ section {
 
 .social-icons a {
     display: inline-flex;
-    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 45px;            /* Fixed width */
+    height: 45px;           /* Fixed height */
+    font-size: 1.8rem;      /* Icon size */
     background: transparent;
     color: var(--global-clr);
+    border: 2px solid var(--global-clr); /* Optional: ek border se ye aur clean lagenge */
+    border-radius: 50%;
     transition: .5s;
     text-decoration: none;
 }
 
+.social-icons a:hover {
+    background: var(--global-clr);
+    color: var(--dark-clr);
+    transform: translateY(-5px);
+}
 .social-icons a:hover {
     transform: translateY(-10px);
     text-decoration: none;
@@ -213,16 +224,16 @@ section {
     gap: 1.5rem;
 }
 
+/* Purane .btn code ko isse replace karein */
 .btn {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 10rem;
-    height: 100%;
-    font-size: 1.3rem;
+    width: 160px;          /* Fixed width takki text ke sath change na ho */
+    height: 50px;           /* Fixed height */
+    font-size: 1.1rem;      /* Thoda chota font responsive ke liye */
     font-weight: 600;
-    padding: 0.6rem 0;
     color: var(--dark-clr);
     background: var(--global-clr);
     border: 2px solid var(--global-clr);
@@ -230,6 +241,7 @@ section {
     cursor: pointer;
     overflow: hidden;
     z-index: 1;
+    transition: .5s;
 }
 
 .btn:hover {
@@ -688,18 +700,31 @@ img {
 /* ============================= */
 /* 📱 SMALL MOBILE */
 /* ============================= */
-@media (max-width: 480px) {
-
-    .hero-content h1 {
-        font-size: 1.7rem;
+/* ISKO PASTE KAREIN */
+@media (max-width: 768px) {
+    .hero-btn {
+        display: flex !important;
+        flex-direction: row !important; /* Buttons ko side-by-side rakhne ke liye */
+        justify-content: center !important;
+        gap: 15px !important;
     }
 
     .btn {
-        width: 100%;
+        width: 140px !important; /* Fixed width: ab button stretch nahi hoga */
+        height: 45px !important; /* Fixed height */
+        font-size: 0.9rem !important; /* Mobile ke liye perfect size */
     }
 
-    .hero-btn {
-        flex-direction: column;
+    .social-icons {
+        display: flex !important;
+        justify-content: center !important;
+        margin-top: 20px;
+    }
+
+    .social-icons a {
+        width: 40px !important; /* Icons ka size bhi fix kar diya */
+        height: 40px !important;
+        font-size: 1.2rem !important;
     }
 }
 @media (max-width: 768px) {
